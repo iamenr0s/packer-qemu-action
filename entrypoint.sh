@@ -2,7 +2,7 @@
 
 cd "${INPUT_WORKINGDIR:-.}"
 
-if [[ ! -f "$INPUT_TEMPLATEFILE" ]] && [[ $INPUT_TEMPLATEFILE != *.json ]]; then
+if [[ ! -f "$INPUT_TEMPLATEFILE" ]]; then
     echo "${INPUT_TEMPLATEFILE} does not exit in the working directory (${INPUT_WORKINGDIR})"
     exit 1
 fi
