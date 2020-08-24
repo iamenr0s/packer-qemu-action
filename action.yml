@@ -1,4 +1,4 @@
-name: 'Packer build'
+name: 'Packer qemu build'
 author: 'enr0s <info@enros.me>'
 description: 'Run packer build on top of kvm hypervisor'
 
