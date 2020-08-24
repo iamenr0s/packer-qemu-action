@@ -1,14 +1,14 @@
 #!/bin/bash
 
-cd "${WORKINGDIR:-.}"
+cd "${INPUT_WORKINGDIR:-.}"
 
-if [[ ! -f "$TEMPLATEFILE" ]] && [[ $TEMPLATEFILE != *.json ]]; then
-    echo "${TEMPLATEFILE} does not exit in the working directory (${WORKINGDIR})"
+if [[ ! -f "$INPUT_TEMPLATEFILE" ]] && [[ $INPUT_TEMPLATEFILE != *.json ]]; then
+    echo "${INPUT_TEMPLATEFILE} does not exit in the working directory (${INPUT_WORKINGDIR})"
     exit 1
 fi
 
-BUILD_RUN=$(sh -c "packer build ${TEMPLATEFILE}" 2>&1)
+BUILD_OUTPUT=$(sh -c "packer build ${INPUT_TEMPLATEFILE}" 2>&1)
 BUILD_SUCCESS=$?
-echo "$BUILD_RUN"
+echo "$BUILD_OUTPUT"
 
 exit $BUILD_SUCCESS
