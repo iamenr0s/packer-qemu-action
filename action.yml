@@ -1,0 +1,21 @@
+name: 'Packer build'
+author: 'enr0s <info@enros.me>'
+description: 'Run packer build on top of kvm hypervisor'
+
+inputs:
+  templateFile:
+    description: 'Packer template file to use for packer build'
+    required: false
+    default: 'packer-template.json'
+  workingDir:
+    description: 'Directory where the packer template is located'
+    required: false
+    default: '.'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'check-circle'
+  color: 'blue'
