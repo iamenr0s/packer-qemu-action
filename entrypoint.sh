@@ -7,7 +7,7 @@ if [[ ! -f "$INPUT_TEMPLATEFILE" ]]; then
     exit 1
 fi
 
-BUILD_OUTPUT=$(sh -c "packer build ${INPUT_TEMPLATEFILE}" 2>&1)
+BUILD_OUTPUT=$(sh -c "PACKER_LOG=1 packer build ${INPUT_TEMPLATEFILE}" 2>&1)
 BUILD_SUCCESS=$?
 echo "$BUILD_OUTPUT"
 
